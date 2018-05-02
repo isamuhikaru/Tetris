@@ -1,40 +1,20 @@
 $(document).ready(function(){
 
 //Cambio de Color a Titulo:
-	function cambio_color(){
+function cambio_color_arriba(){
 
-		function cambio_color_blanco(){
-			$(".main-container > h1").removeClass("main-titulo");
-			$(".main-container > h1").addClass("main-titulo-blanco");
-		};
-
-		setTimeout(cambio_color_blanco,1000);
-			
-			function cambio_color_verde(){
-			$(".main-container > h1").removeClass("main-titulo-blanco");
-			$(".main-container > h1").addClass("main-titulo");
-		};
-
-		setTimeout(cambio_color_verde,2000);
+		$("h1.main-titulo").animate({
+			opacity: "1"
+			//No se puede quedar sin no cambiar alguna propiedad CSS por ello se pone esta que no afecta
+		},2000,"linear",function(){
+			$(this).css({'color': "white"});
+		}).animate({
+			opacity: "1"
+		},2000,"linear",function(){
+			$(this).css({'color': "#DCFF0E"});
+		});
 
 	};
-
-	setInterval(cambio_color,4000);
-
-
-// //Cambio de Color a Titulo B:
-// 	function cambio_color_titulo(){
-		
-// 		$(".main-titulo").animate({
-// 			color: "white"
-// 		}, 1000, function(){
-// 			$(".main-titulo").animate({
-// 				color: "#DCFF0E"
-// 			},1000);
-// 		});
-
-// 	};
-
-// 	setInterval(cambio_color_titulo,4000);
+	setInterval(cambio_color_arriba,4000);
 
 });
